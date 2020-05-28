@@ -17,26 +17,6 @@ import java.util.stream.Collectors;
  * @author mz-hafizha
  */
 public class rumus_fix {
-
-    public static <T> ArrayList<T> removeDuplicates(ArrayList<T> list) {
-
-        // Create a new LinkedHashSet 
-        Set<T> set = new LinkedHashSet<>();
-
-        // Add the elements to set 
-        set.addAll(list);
-
-        // Clear the list 
-        list.clear();
-
-        // add the elements of set 
-        // with no duplicates to the list 
-        list.addAll(set);
-
-        // return the list 
-        return list;
-    }
-
     static int knapsackDP(int[] w, int[] v, int n, int W) {
         List<String> surahList = new ArrayList<>();
         System.out.println(surahList.size());
@@ -64,9 +44,6 @@ public class rumus_fix {
                     m[i][j] = Math.max(
                             m[i - 1][j],
                             m[i - 1][j - w[i - 1]] + v[i - 1]);
-//                    System.out.println("b :::: " + (i - 1) + " " + (j - w[i - 1]) + " " + m[i][j]);
-//                    System.out.println(j - w[i - 1] + " " + v[i - 1]);
-//                    System.out.println("baru " + (m[i - 1][j - w[i - 1]] + v[i - 1]));
                     int inj = j - w[i - 1];
 
                     // kalo maks pada tahap i lebih besar dari i-1
@@ -99,89 +76,13 @@ public class rumus_fix {
                                     k = k - w[x - 1];
 
                                 }
-                                // sekarang
-//                             System.out.println("ha");
                             } else {
                                 System.out.println("err");
                             }
-//                            if ((m[x - 1][j - w[x - 1]] + v[x - 1]) > (m[x - 1][j]) && (m[x - 1][j - w[x - 1]] > 0)) {
-//                                System.out.println(v[x-1]+" x "+x);
-//                            } else {
-//                                System.out.println(v[x-2]);
-//                            }
-
                         }
 
                     }
 
-//                    if ((m[i - 1][j - w[i - 1]] + v[i - 1]) > (m[i - 1][j])) {
-//                        surahList.add(v[i-1]);
-//                         List<Integer> newList = surahList.stream() 
-//                                      .distinct() 
-//                                      .collect(Collectors.toList());
-//                         System.out.println(newList);
-//                    } else {
-//                        break;
-//                    }
-//                    System.out.println("======================================");
-//                    System.out.println("op: " + m[i][j]);
-////                    surahList.add(1, Integer.toString(v[i-1]));
-////                    System.out.println(surahList.get(surahList.size()-2)+" "+ surahList.get(surahList.size()-1));
-////                    System.out.println(surahList.get(surahList.size()-1));
-//                    
-////                    System.out.println(surahList.get(surahList.size()-2)==surahList.get(surahList.size()-1));
-//                    
-//                    int inj = j - w[i - 1];
-//                    int a = m[i - 1][j - w[i - 1]] + v[i - 1];
-//                    int b = m[i - 1][j];
-//
-//                    if (inj >=0) {
-//                        if (a > b) {
-//                            if (surahList.size()==0 || surahList.size()==1) {
-//                                surahList.add(v[i-1]);
-////                                System.out.println(surahList.get(surahList.size()-1));
-//                            }   else if(surahList.size()==2 ) {
-////                                surahList.set(surahList.size()-1, surahList.get(surahList.size()));
-////                                surahList.remove(surahList.size()-2);
-//
-//                                if (surahList.get(surahList.size()-1)== surahList.get(surahList.size()-2)) {
-//                                    surahList.remove(surahList.size()-1);
-//                                    System.out.println("suraaaaaaaaaaah" + surahList);
-//                                } else {
-//                                    surahList.add(v[i-1]);
-//                                    System.out.println("suraaaaaaaaaaah" + surahList);
-//                                }
-//                                    
-//                            } else {
-//                                System.out.println("elseeeeeeeeeeee");
-//                                surahList.remove(surahList.size()-1);
-//                                if (surahList.get(surahList.size()-1)== surahList.get(surahList.size()-2)) {
-//                                    surahList.remove(surahList.size()-1);
-//                                    System.out.println("suraaaaaaaaaaah" + surahList);
-//                                } else {
-//                                    surahList.add(v[i-1]);
-//                                    System.out.println("suraaaaaaaaaaah" + surahList);
-//                                }
-//                            }
-//                    } else {
-//                        surahList.add(v[i-1]);
-//                        surahList.remove(surahList.size()-1);
-//                    }
-//                    
-////                    System.out.println(surahList.get(surahList.size()-1) + Integer.toString(v[i - 1]));
-//                    System.out.println(w[i - 1]);
-//                    System.out.println("inj "+inj);
-//                    System.out.println(a + " " + b);
-//                    System.out.println("W "+ W);
-//                    System.out.println("suraaaaaaaaaaah" + surahList);
-//                    System.out.println("---" + m[i - 1][j - w[i - 1]] + " " + v[i - 1] + " " + (j - w[i - 1]));
-//                    } else {
-//                        for (int surah : surahList) {
-//                            if (surah(-1)) {
-//                                
-//                            }
-//                        }
-//                    } 
                 }
             }
         }
